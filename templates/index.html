@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Video Q&A Chatbot</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1> YouTube Video Q&A Chatbot</h1>
+
+        <p class="subtitle">
+            Ask questions and get answers from a YouTube video's transcript.
+        </p>
+
+        <form id="questionForm">
+            <label for="videoUrl">YouTube Video URL</label>
+
+            <input
+                type="url"
+                id="videoUrl"
+                placeholder="Paste YouTube video link here"
+                required
+            >
+
+            <label for="question">Your Question</label>
+
+            <textarea
+                id="question"
+                placeholder="Example: What is this video about?"
+                rows="4"
+                required
+            ></textarea>
+
+            <button type="submit" id="askButton">
+                Ask Question
+            </button>
+        </form>
+
+        <div class="answer-box">
+            <h2>Answer</h2>
+            <p id="answer" aria-live="polite">
+                Your answer will appear here.
+            </p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
